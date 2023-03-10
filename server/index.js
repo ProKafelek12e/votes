@@ -36,4 +36,13 @@ app.get("/vote/:imie/:nazwisko/:PESEL",function(req,res){
     })
 })
 
+app.get("/table",function(req,res){
+    const sql = "SELECT * FROM glosujacy"
+    con.query(sql,function(err,result,fields){
+        if(err) console.log(err)
+        res.send(result)
+        console.log(fields)
+    })
+})
+
 app.listen(3000)
