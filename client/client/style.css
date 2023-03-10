@@ -1,0 +1,32 @@
+#kandydaci{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 10px;
+    overflow-y: auto;
+}
+#kandydaci div{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    margin: 0px;
+    display: grid;
+    grid-template-rows: 20vh 80vh;
+}
+#adder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#inpPesel{
+    text-align: center;
+}
