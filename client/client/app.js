@@ -4,6 +4,7 @@ async function getKandydaci(){
     json = await data.json()
     await createKandydaci()
 }
+//©
 function createKandydaci(){
     document.getElementById("kandydaci").innerHTML = ""
     for(var i=0;i<=json.length-1;i++){
