@@ -70,12 +70,11 @@ function table(lv){
             const tr1 = document.createElement("tr")
             for(var i=0;i<=kandydaci.length-1;i++){
                 var kandydat = glosyna[i]
+                var pesel = kandydat.Kandydat.pesele[f]
                 console.log(kandydat.Kandydat.pesele[f])
                 const td = document.createElement("td")
-                if(kandydat.Kandydat.pesele[f].pesel == undefined){
-                    td.innerHTML=""
-                }
-                else td.innerHTML = kandydat.Kandydat.pesele[f].pesel
+                if(pesel.pesel == undefined)  td.innerHTML=""
+                else if(pesel.pesel != undefined) td.innerHTML = kandydat.Kandydat.pesele[f].pesel
                 tr1.appendChild(td)
             }
             document.getElementById("table").appendChild(tr1)
