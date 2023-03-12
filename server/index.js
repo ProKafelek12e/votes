@@ -45,4 +45,14 @@ app.get("/table",function(req,res){
     })
 })
 
+app.get("/glosy/:imie/:nazwisko",function(req,res){
+    const imie = req.params.imie
+    const nazwisko = req.params.nazwisko
+    const sql = `SELECT * FROM glosujacy WHERE kandydat = '${imie} ${nazwisko}'`
+    con.query(sql,function(err,result,fields){
+        if(err) console.log(err)
+        res.send({pesele:result})
+        console.log(fields)
+    })
+})
 app.listen(3000)
