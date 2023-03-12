@@ -7,6 +7,7 @@ async function getGlosy(){
     const data = await fetch(`${baseurl}/table`)
     json = await data.json()
     //console.log(json)
+
     countVotes()
 //©
 }
@@ -81,7 +82,69 @@ function table(lv){
             }
             document.getElementById("table").appendChild(tr1)
     }
+    if(char !=undefined){
+        dCharte()
+    }
+    Charte()
 }
 
 getKandydaci()
 getGlosy()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Charte(){
+    const ctx = document.getElementById('myChart');
+    
+    
+    char = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Wykonane', 'Nie wykonane'],
+        datasets: [{
+          label: 'Votes',
+          data: [wykonane ,niewykonane],
+          backgroundColor: [
+            'green',
+            'red',],
+          borderColor: [
+            'black',
+            'black'],
+          borderWidth: 2
+        }]
+      },
+        options: {
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                title: {
+                    display: true,
+                    text: 'Done / Undone chart',
+                    color:"black"
+                },
+                tooltip:{
+                    enabled:false
+                },
+                label:{
+                    color:"black"
+                }
+            }
+        }
+    });
+    
+    }
+    function dCharte(){
+        char.destroy()
+    }
