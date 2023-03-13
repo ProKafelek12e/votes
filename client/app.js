@@ -30,9 +30,6 @@ async function vote(i){
     }
 }
 getKandydaci()
-function log(){
-    window.location.href = "/client/admin/index.html"
-}
 var l = 0
 function login(){
     if(l==0){
@@ -73,5 +70,5 @@ function login(){
 function Check(){
     const login = document.getElementById("username").value
     const pass =document.getElementById("password").value
-    if(login == "admin"&&pass=="admin") console.log("logged")
+    if(login == "admin"&&pass=="admin") window.location.href = "/client/admin/index.html"
 }
