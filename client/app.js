@@ -30,3 +30,6 @@ async function vote(i){
     }
 }
 getKandydaci()
+function log(){
+    window.location.href = "/client/client/admin/index.html"
+}

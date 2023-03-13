@@ -2,6 +2,7 @@ var glosyna = []
 var jsonk = []
 var json = []
 var kandydaci = []
+var char
 //Pobiera całą tabelke glosujacy
 async function getGlosy(){
     const data = await fetch(`${baseurl}/table`)
@@ -114,7 +115,7 @@ function Charte(){
         labels: ['Wykonane', 'Nie wykonane'],
         datasets: [{
           label: 'Votes',
-          data: [wykonane ,niewykonane],
+          data: [3 ,4],
           backgroundColor: [
             'green',
             'red',],
@@ -131,7 +132,7 @@ function Charte(){
                 },
                 title: {
                     display: true,
-                    text: 'Done / Undone chart',
+                    text: 'Votes',
                     color:"black"
                 },
                 tooltip:{
