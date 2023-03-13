@@ -33,8 +33,8 @@ async function countVotes(){
         kandydaci.push({kandydat:kandydat,  votes:votes})
     }
     for(var i = 0;i<=kandydaci.length-1;i++){
-        k.push(kandydaci[i].kandydat)
-        d.push(kandydaci[i].votes)
+        k.unshift(kandydaci[i].kandydat)
+        d.unshift(kandydaci[i].votes)
     }
     console.log(kandydaci)
     await getGlosyNa()
