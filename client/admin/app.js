@@ -141,6 +141,11 @@ function table(lv){
         char.destroy()
     }
 
+async function add(){
+    const imie = document.getElementById("imie").value
+    const nazwisko = document.getElementById("nazwisko").value
+    await fetch(`${baseurl}/kandydat/${imie}/${nazwisko}`)
+}
 
 
 

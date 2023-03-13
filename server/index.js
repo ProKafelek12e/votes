@@ -55,4 +55,13 @@ app.get("/glosy/:imie/:nazwisko",function(req,res){
         console.log(fields)
     })
 })
+app.get("/kandydat/:imie/:nazwisko",(req,res)=>{
+    const imie = req.params.imie
+    const nazwisko = req.params.nazwisko
+    const sql = `INSERT INTO kandydaci(imie,nazwisko) VALUES ('${imie}','${nazwisko}')`
+    con.query(sql,function(err,result,fields){
+        if(err) console.log(err)
+        else res.send("dodane")
+    })
+})
 app.listen(3000)
