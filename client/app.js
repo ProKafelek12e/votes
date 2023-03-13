@@ -33,3 +33,45 @@ getKandydaci()
 function log(){
     window.location.href = "/client/admin/index.html"
 }
+var l = 0
+function login(){
+    if(l==0){
+        
+        const div = document.createElement("div")
+        const username = document.createElement("input")
+        const password = document.createElement("input")
+        
+        username.id = "username"
+        password.id = "password"
+        div.id = "dive"
+        password.type="password"
+
+        username.placeholder = "Login"
+        password.placeholder = "Password"
+        
+        document.getElementById("login").style.width = "200px"
+        
+        const button = document.createElement("button")
+        
+        button.setAttribute("onclick","Check()")
+        button.innerHTML = "login"
+        
+        setTimeout(function(){
+            div.appendChild(username)
+            div.appendChild(password)
+            div.appendChild(button)
+        },400)
+        document.getElementById("login").appendChild(div)
+        l=1
+    }
+    else{
+        document.getElementById("dive").remove()
+        document.getElementById("login").style.width = "64px"
+        l=0
+    }
+}
+function Check(){
+    const login = document.getElementById("username").value
+    const pass =document.getElementById("password").value
+    if(login == "admin"&&pass=="admin") console.log("logged")
+}

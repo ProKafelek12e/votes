@@ -22,11 +22,46 @@ body{
     grid-template-rows: 20vh 80vh;
 }
 #adder{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "login input";
+    justify-content: center;
+    align-items: center;
+
+}
+#inpPesel{
+    text-align: center;
+}
+#log{    
+    grid-area: login;
+}
+#login{
+    border: 3px solid black;
+    height: 64px;
+    width: 64px;
+    border-radius: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    padding: 8px;
+    align-items: center;
+}
+#pesele{
+    grid-area: input;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 25%;
 }
-#inpPesel{
-    text-align: center;
+#login input{
+    width: 100px;
+}
+#login div{
+    display: flex;
+    flex-direction: column;
+}
+#login{
+    transition: 0.5s;
 }
