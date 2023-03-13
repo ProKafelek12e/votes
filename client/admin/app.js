@@ -3,8 +3,8 @@ var jsonk = []
 var json = []
 var kandydaci = []
 var char
-var k
-var d 
+var k = []
+var d = []
 //Pobiera całą tabelke glosujacy
 async function getGlosy(){
     const data = await fetch(`${baseurl}/table`)
@@ -33,14 +33,8 @@ async function countVotes(){
         kandydaci.push({kandydat:kandydat,  votes:votes})
     }
     for(var i = 0;i<=kandydaci.length-1;i++){
-        if(i==0){
-             k = `'${kandydaci[i].kandydat}'`
-             d = `'${kandydaci[i].votes}'`
-        }
-        else{
-             k = k + `,'${kandydaci[i].kandydat}'`
-             d = d + `,'${kandydaci[i].votes}'`
-        }
+        k.push(kandydaci[i].kandydat)
+        d.push(kandydaci[i].votes)
     }
     console.log(kandydaci)
     await getGlosyNa()
@@ -106,19 +100,16 @@ function table(lv){
     getGlosy()
     function Charte(){
         const ctx = document.getElementById('myChart');
-    console.log(k)
-    console.log(d)
-    
     char = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: [k],
+        labels: k,
         datasets: [{
           label: 'Votes',
-          data: [d],
-          backgroundColor: [
+          data: d,
+          /*backgroundColor: [
             'green',
-            'red',],
+            'red',],*/
           borderColor: [
             'black',
             'black'],
