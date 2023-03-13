@@ -3,6 +3,7 @@ var jsonk = []
 var json = []
 var kandydaci = []
 var char
+var t
 //Pobiera całą tabelke glosujacy
 async function getGlosy(){
     const data = await fetch(`${baseurl}/table`)
@@ -30,9 +31,14 @@ async function countVotes(){
         }
         kandydaci.push({kandydat:kandydat,  votes:votes})
     }
-    //console.log(kandydaci)
+    console.log(kandydaci)
     await getGlosyNa()
     await lider()
+    for(var i = 0;i<=kandydaci.length-1;i++){
+        if(i==0) t = `'${kandydaci[i].kandydat}'`
+        else t = t + `,'${kandydaci[i].kandydat}'`
+        console.log(t)
+    }
 }
 //sprawdza kto ma najwiencej głosów i ile
 function lider(){
@@ -92,19 +98,6 @@ function table(lv){
 getKandydaci()
 getGlosy()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function Charte(){
     const ctx = document.getElementById('myChart');
     
@@ -112,10 +105,10 @@ function Charte(){
     char = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: ['Wykonane', 'Nie wykonane'],
+        labels: [t],
         datasets: [{
           label: 'Votes',
-          data: [3 ,4],
+          data: [3 ,4,4,],
           backgroundColor: [
             'green',
             'red',],
@@ -149,3 +142,8 @@ function Charte(){
     function dCharte(){
         char.destroy()
     }
+
+
+
+
+
