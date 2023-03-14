@@ -6,12 +6,14 @@
     gap: 10px;
     overflow-y: auto;
 }
-#kandydaci div{
+.kand{
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 170px;
-    background-color: burlywood;
+    width: 250px;
+    height: 220px;
+    background-color:#cccccc;
+    border: black solid 8px;
+    border-radius: 40px;
     text-align: center;
     padding-top: 30px;
     align-items: center;
@@ -46,6 +48,11 @@ body{
     justify-content: left;
     padding: 8px;
     align-items: center;
+    background-color: #eeeeee;
+
+}
+#login img{
+    cursor: pointer;
 }
 #pesele{
     grid-area: input;
@@ -64,4 +71,12 @@ body{
 }
 #login{
     transition: 0.5s;
+}
+.bg{
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+    border-radius:120px ;
+    background-color: #eeeeee;
+    border: solid 1px black;
 }

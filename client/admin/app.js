@@ -107,9 +107,6 @@ function table(lv){
         datasets: [{
           label: 'Votes',
           data: d,
-          /*backgroundColor: [
-            'green',
-            'red',],*/
           borderColor: [
             'black',
             'black'],
@@ -127,7 +124,7 @@ function table(lv){
                     color:"black"
                 },
                 tooltip:{
-                    enabled:false
+                    enabled:true
                 },
                 label:{
                     color:"black"

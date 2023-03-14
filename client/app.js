@@ -9,15 +9,17 @@ function createKandydaci(){
     document.getElementById("kandydaci").innerHTML = ""
     for(var i=0;i<=json.length-1;i++){
         const div = document.createElement("div")
+        div.classList.add("kand")
         div.setAttribute("onclick",`vote(${i})`)
-        
+        const bg = document.createElement("div")
+        bg.classList.add("bg")
         const img = document.createElement("img")
         img.src = "contacts-64.png"
         
         const h1 = document.createElement("h1")
         h1.innerHTML = json[i].imie +" "+json[i].nazwisko
-        
-        div.appendChild(img)
+        bg.appendChild(img)
+        div.appendChild(bg)
         div.appendChild(h1)
         document.getElementById("kandydaci").appendChild(div)
     }
