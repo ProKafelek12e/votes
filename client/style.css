@@ -1,22 +1,38 @@
+body{
+    font-family: 'Courier New',monospace;
+}
+input{
+    font-family: 'Courier New', monospace;
+}
+button{
+    font-family: 'Courier New', monospace;
+    font-weight: bolder;
+}
+h3{
+    margin: 5px;
+}
 #kandydaci{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
-    gap: 10px;
+    gap: 90px;
     overflow-y: auto;
+    padding-top: 40px;
 }
 .kand{
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 220px;
+    height: 320px;
     background-color:#cccccc;
     border: black solid 8px;
     border-radius: 40px;
     text-align: center;
     padding-top: 30px;
     align-items: center;
+    cursor:pointer ;
+    padding: 25px;
 }
 body{
     margin: 0px;
@@ -29,7 +45,8 @@ body{
     grid-template-areas: "login input";
     justify-content: center;
     align-items: center;
-
+    padding-left: 20px;
+    border-bottom: black 2px solid;
 }
 #inpPesel{
     text-align: center;
@@ -79,4 +96,7 @@ body{
     border-radius:120px ;
     background-color: #eeeeee;
     border: solid 1px black;
+}
+#adder{
+    background-color: #cccccc;
 }

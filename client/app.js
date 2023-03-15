@@ -51,18 +51,18 @@ function login(){
         username.placeholder = "Login"
         password.placeholder = "Password"
         
-        document.getElementById("login").style.width = "200px"
+        document.getElementById("login").style.width = "195px"
         
         const button = document.createElement("button")
         
         button.setAttribute("onclick","Check()")
-        button.innerHTML = "login"
+        button.innerHTML = "Login"
         
         setTimeout(function(){
             div.appendChild(username)
             div.appendChild(password)
             div.appendChild(button)
-        },400)
+        },270)
         document.getElementById("login").appendChild(div)
         l=1
     }
