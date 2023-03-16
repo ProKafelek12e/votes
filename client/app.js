@@ -75,5 +75,5 @@ function login(){
 function Check(){
     const login = document.getElementById("username").value
     const pass =document.getElementById("password").value
-    if(login == "admin"&&pass=="admin") window.location.href = "/client/admin/index.html"
+    if(login == "admin"&&pass=="admin") window.location.href = "admin/index.html"
 }
