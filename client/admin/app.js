@@ -106,17 +106,13 @@ function table(lv){
         labels: k,
         datasets: [{
           label: 'Votes',
-          data: d,
-          borderColor: [
-            'black',
-            'black'],
-          borderWidth: 2
+          data: d
         }]
       },
         options: {
             plugins: {
                 legend: {
-                    display: false,
+                    display: true,
                 },
                 title: {
                     display: true,
