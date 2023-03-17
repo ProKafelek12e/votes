@@ -72,8 +72,11 @@ function login(){
         l=0
     }
 }
-function Check(){
+async function Check(){
     const login = document.getElementById("username").value
     const pass =document.getElementById("password").value
-    if(login == "admin"&&pass=="admin") window.location.href = "admin/index.html"
+    const data = await fetch(`${baseurl}/login/${login}/${pass}`)
+    const kon = await data.json()
+    console.log(kon)
+    if(kon.odp=="ok") window.location.href = "admin/index.html"
 }

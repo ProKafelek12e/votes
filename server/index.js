@@ -4,7 +4,7 @@ const mysql = require('mysql')
 
 const app = express()
 app.use(cors())
-
+var konta = [{login:"admin",pass:"admin"}]
 var con = mysql.createConnection({
     host:"localhost",
     user:"root",
@@ -64,4 +64,17 @@ app.get("/kandydat/:imie/:nazwisko",(req,res)=>{
         else res.send("dodane")
     })
 })
+
+app.get("/login/:login/:pass",(req,res)=>{
+    const login = req.params.login
+    const pass = req.params.pass
+    for(var i=0;i<=konta.length-1;i++){
+        if(login==konta[i].login && pass==konta[i].pass){
+            res.send({odp:"ok"})
+        }
+        else res.send("nie")
+    }
+})
+
+
 app.listen(3000)
